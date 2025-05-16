@@ -1,0 +1,160 @@
+# BE YOU Institute Personality Assessment - Project README
+
+## Table of Contents
+
+- [BE YOU Institute Personality Assessment - Project README](#be-you-institute-personality-assessment---project-readme)
+  - [Table of Contents](#table-of-contents)
+  - [Purpose](#purpose)
+  - [Functionality](#functionality)
+    - [Form Overview](#form-overview)
+    - [Form Elements](#form-elements)
+  - [Troubleshooting with ChatGPT](#troubleshooting-with-chatgpt)
+  - [Setting Up the Google Sheet](#setting-up-the-google-sheet)
+    - [A. Create the Google Sheet](#a-create-the-google-sheet)
+    - [B. Set Up Google Apps Script](#b-set-up-google-apps-script)
+    - [C. Deploy as a Web App](#c-deploy-as-a-web-app)
+    - [D. Connect the Web App to Your Project](#d-connect-the-web-app-to-your-project)
+
+---
+
+## Purpose
+
+This project provides a web-based personality assessment for the BE YOU Institute. It collects user responses via a Likert-scale form and stores the results in a Google Sheet for further analysis and personalized feedback.
+
+---
+
+## Functionality
+
+### Form Overview
+
+- Collects user's full name and email address.
+- Presents a series of Likert-scale questions (1–5) about work habits, organization, and other personality traits.
+- Requires user consent before submission.
+- Submits responses to a Google Sheet via a Google Apps Script Web App.
+
+### Form Elements
+
+- **Full Name** (`id="userName"`)
+- **Email Address** (`id="userEmail"`)
+- **Likert Questions**: Each question block uses a `.likert-scale` container with `.likert-option` choices. Each `.likert-scale` has a unique `data-question` attribute (e.g., `work_habits_1`).
+- **Consent Checkbox** (`id="consentCheckbox"`)
+- **Submit Button** (`id="submitAssessment"`)
+
+---
+
+## Troubleshooting with ChatGPT
+
+When seeking help, provide:
+
+- The full HTML for the form and at least one Likert question block.
+- The relevant JavaScript (especially the form submission and event delegation code).
+- Any errors from the browser console or Google Apps Script Executions log.
+- The structure of your Google Sheet (column headers).
+
+---
+
+## Setting Up the Google Sheet
+
+### A. Create the Google Sheet
+
+1. Go to [Google Sheets](https://sheets.google.com) and create a new spreadsheet.
+2. In the first row, add the following column headers (adjust as needed for your questions):
+
+    | Timestamp | Name | Email | work_habits_1 | work_habits_2 | ... |
+    | --------- | ---- | ----- | ------------- | ------------- | --- |
+
+   - `work_habits_1`, `work_habits_2`, etc. should match the `data-question` attributes in your HTML.
+
+---
+
+### B. Set Up Google Apps Script
+
+1. In your Google Sheet, go to **Extensions > Apps Script**.
+2. Delete any code in `Code.gs` and paste the following:
+
+    ```javascript
+    function doPost(e) {
+      var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('beyouprofileinsights'); // Change 'Sheet1' if needed
+      var data = JSON.parse(e.postData.contents);
+
+      // Prepare the row: Timestamp, Name, Email, then each question in order
+      var row = [
+        new Date(),
+        data.name || "",
+        data.email || "",
+        data.work_habits_1 || "",
+        data.work_habits_2 || "",
+        data.work_habits_3 || "",
+        data.achievement_1 || "",
+        data.achievement_2 || "",
+        data.openness_1 || "",
+        data.self_confidence_1 || "",
+        data.self_confidence_2 || "",
+        data.conscientiousness_1 || "",
+        data.conscientiousness_2 || "",
+        data.patience_1 || "",
+        data.assertiveness_1 || "",
+        data.assertiveness_2 || "",
+        data.competitiveness_1 || "",
+        data.extroversion_1 || "",
+        data.cooperativeness_1 || "",
+        data.cooperativeness_2 || "",
+        data.temperament_1 || "",
+        data.interaction_1 || "",
+        data.temperament_2 || "",
+        data.confort_alone || "",
+        data.comfort_discussions || "",
+        data.comfort_changes || "",
+        data.comfort_leading || ""
+      ];
+
+      sheet.appendRow(row);
+
+      return ContentService.createTextOutput(JSON.stringify({result: "success"}))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+    ```
+
+3. Save the script.
+
+---
+
+### C. Deploy as a Web App
+
+1. Click **Deploy > New deployment**.
+2. Click **Select type > Web app**.
+3. Set **"Execute as"** to **Me**.
+4. Set **"Who has access"** to **Anyone** (or "Anyone with the link").
+5. Click **Deploy** and authorize if prompted.
+6. Copy the **Web App URL**.
+
+---
+
+### D. Connect the Web App to Your Project
+
+1. Open your `script.js` file.
+2. **On line 132** (or wherever the fetch URL is set), replace the placeholder URL with your Web App URL:
+
+    ```javascript
+    // script.js, line 132 (example)
+    const response = await fetch(
+        "YOUR_APPS_SCRIPT_WEB_APP_URL", // <-- Replace this with your actual URL
+        {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: userName,
+                email: userEmail,
+                ...responses
+            }),
+        }
+    );
+    ```
+
+3. Save your changes.
+
+---
+
+**Your form is now connected to your Google Sheet!**
+
+If you have issues, check the browser console, the Network tab, and the Apps Script Executions log for errors.

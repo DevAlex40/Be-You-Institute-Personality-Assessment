@@ -1,0 +1,156 @@
+:root {
+  --primary-color: #6c63ff;
+  --secondary-color: #f50057;
+  --accent-color: #00bfa5;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
+}
+
+.header-gradient {
+  background: linear-gradient(135deg, #6c63ff 0%, #8e87fa 100%);
+}
+
+.question-card {
+  transition: all 0.3s ease;
+}
+
+.question-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.likert-scale {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.likert-option {
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.likert-option:hover {
+  background-color: #e0e7ff;
+}
+
+.likert-option.selected {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.form-section {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-gradient-btn {
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right,
+    #6c63ff 0%,
+    #f50057 51%,
+    #6c63ff 100%
+  );
+  transition: 0.5s;
+}
+
+.animated-gradient-btn:hover {
+  background-position: right center;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #e4e8f0;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(to right, #6c63ff, #f50057);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.animation-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-4 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-5 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-6 {
+  animation-delay: 0.6s;
+}
+
+.animation-delay-7 {
+  animation-delay: 0.7s;
+}
+
+.animation-delay-8 {
+  animation-delay: 0.8s;
+}
+
+.animation-delay-9 {
+  animation-delay: 0.9s;
+}
+
+.animation-delay-10 {
+  animation-delay: 1s;
+}
+.progress-bar-width {
+  width: 0%;
+}
+
+/* Testing Style for .likert-option.selected this is commented out but kept for future testing */
+/*
+.likert-option.selected {
+  background-color: #6c63ff !important;
+  color: white !important;
+  border: 2px solid red !important;
+}
+.likert-option {
+  background-color: #f5f7fa !important;
+  color: #333 !important;
+  border: 2px solid #6c63ff !important;
+}
+*/

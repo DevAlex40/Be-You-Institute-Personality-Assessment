@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" >
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" >
+		<title>BE YOU Institute Personality Assessment Questionnaire</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet" >
+      <link rel="stylesheet" href="style.css" >
+		<link
+			href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css"
+			rel="stylesheet" >
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet" >
+	</head>
+	<body class="min-h-screen">
+		<div class="container mx-auto px-4 py-8 max-w-4xl">
+			<!-- Header -->
+			<header
+				class="header-gradient rounded-xl text-white text-center p-8 mb-10 shadow-lg">
+				<h1 class="text-4xl font-bold mb-4">BE YOU Institute</h1>
+				<h2 class="text-2xl font-semibold mb-2">
+					Personality Assessment Questionnaire
+				</h2>
+				<p class="text-lg">
+					Discover your authentic self and unlock your true potential
+				</p>
+				<div class="mt-4 text-lg italic">#beamazing #beincredible #BEYOU</div>
+			</header>
+
+			<!-- Introduction -->
+			<div
+				class="bg-white rounded-xl shadow-md p-8 mb-10 form-section animation-delay-1">
+				<h2 class="text-2xl font-bold text-purple-600 mb-4">
+					Welcome to Your Journey of Self-Discovery
+				</h2>
+				<p class="mb-4">
+					This assessment is designed to help you understand your unique
+					workplace traits and tendencies. There are no right or wrong
+					answers—just honest reflections of who you are.
+				</p>
+				<p class="mb-4">
+					Your responses will be used to create a personalized profile that
+					highlights your strengths, potential growth areas, and how you can
+					leverage your natural tendencies in professional settings.
+				</p>
+				<p class="font-medium">
+					Please answer each question based on how you typically think, feel, or
+					behave in workplace situations.
+				</p>
+
+				<div class="mt-8">
+					<label
+						for="userName"
+						class="block text-lg font-medium text-gray-700 mb-2"
+						>Your Full Name:</label
+					>
+					<input
+						type="text"
+						id="userName"
+						placeholder="Enter your full name"
+						autocomplete="name"
+						class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" >
+				</div>
+
+				<div class="mt-6">
+					<label
+						for="userEmail"
+						class="block text-lg font-medium text-gray-700 mb-2"
+						>Email Address:</label
+					>
+					<!-- Label linked to input field. -->
+					<input
+						type="email"
+						id="userEmail"
+						placeholder="Enter your email address"
+						autocomplete="email"
+						class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" >
+				</div>
+
+				<div class="mt-8 text-center">
+					<p class="text-lg font-medium mb-3">Your assessment progress:</p>
+					<div class="progress-bar">
+						<div
+							class="progress progress-bar-width"
+							id="progressBar"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Assessment Form -->
+			<form
+				method="post"
+				id="personalityAssessment"
+				class="space-y-12">
+				<!-- Work Habits Section -->
+				<section
+					class="bg-white rounded-xl shadow-md p-8 form-section animation-delay-2">
+					<h2 class="text-2xl font-bold text-purple-600 mb-6 flex items-center">
+						<i class="fas fa-briefcase mr-3"></i>Work Habits
+					</h2>
+
+					<div class="space-y-8">
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								1. When assigned a task, I prefer to:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="work_habits_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									Plan extensively before starting
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Create a basic plan then adapt
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Jump in and figure it out as I go
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Wait for more guidance
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Delegate when possible
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								2. I would describe my organization skills as:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="work_habits_2">
+								<div
+									class="likert-option"
+									data-value="1">
+									Extremely organized, with detailed systems
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Generally organized with some structure
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Varies depending on the project
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Somewhat disorganized but functional
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									I prefer a more fluid, spontaneous approach
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								3. When facing multiple deadlines, I typically:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="work_habits_3">
+								<div
+									class="likert-option"
+									data-value="1">
+									Create a detailed schedule and follow it precisely
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Prioritize tasks and tackle them systematically
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Focus on what seems most urgent in the moment
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Work on what I enjoy most first
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Feel overwhelmed and seek help or extensions
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Achievement & Motivation Section -->
+				<section
+					class="bg-white rounded-xl shadow-md p-8 form-section animation-delay-3">
+					<h2 class="text-2xl font-bold text-purple-600 mb-6 flex items-center">
+						<i class="fas fa-trophy mr-3"></i>Achievement &amp; Motivation
+					</h2>
+
+					<div class="space-y-8">
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								4. What most drives you to succeed?
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="achievement_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									Personal satisfaction and growth
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Recognition from others
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Financial rewards
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Making a positive impact
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Beating the competition
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								5. When I set goals for myself, they are usually:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="achievement_2">
+								<div
+									class="likert-option"
+									data-value="1">
+									Extremely ambitious and challenging
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Ambitious but attainable
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Moderate and balanced
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Conservative and easily achievable
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									I rarely set formal goals
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								6. When facing an obstacle to my goals, I typically:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="achievement_3">
+								<div
+									class="likert-option"
+									data-value="1">
+									Persist relentlessly until I overcome it
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Try different approaches to solve the problem
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Seek advice or help from others
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Modify my goals to be more realistic
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Consider changing direction entirely
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Openness & Self-Confidence Section -->
+				<section
+					class="bg-white rounded-xl shadow-md p-8 form-section animation-delay-4">
+					<h2 class="text-2xl font-bold text-purple-600 mb-6 flex items-center">
+						<i class="fas fa-lightbulb mr-3"></i>Openness &amp; Self-Confidence
+					</h2>
+
+					<div class="space-y-8">
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								7. When presented with new ideas or methods, I typically:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="openness_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									Embrace them enthusiastically
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Consider them with an open mind
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Need to understand the reasoning first
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Prefer to stick with what's worked before
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Am skeptical of change for change's sake
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								8. When making decisions, how much do you trust your instincts?
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="self_confidence_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									Completely - my gut feeling rarely leads me astray
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Significantly - I balance instinct with facts
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Moderately - I consider my instincts but verify
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Minimally - I prefer data-driven decisions
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Rarely - I don't trust my instincts much
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								9. How do you typically handle criticism?
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="self_confidence_2">
+								<div
+									class="likert-option"
+									data-value="1">
+									Welcome it as valuable feedback for growth
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Accept it from sources I respect
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Initially defensive but reflect on it later
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Often feel it's unfair or inaccurate
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Take it very personally and struggle to move past it
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Conscientiousness & Patience Section -->
+				<section
+					class="bg-white rounded-xl shadow-md p-8 form-section animation-delay-5">
+					<h2 class="text-2xl font-bold text-purple-600 mb-6 flex items-center">
+						<i class="fas fa-check-circle mr-3"></i>Conscientiousness &amp;
+						Patience
+					</h2>
+
+					<div class="space-y-8">
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								10. How important is it for you to follow established rules and
+								procedures?
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="conscientiousness_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									Extremely important - rules exist for good reasons
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Very important - though some flexibility is needed
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Moderately important - depends on the situation
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Somewhat important - results matter more than process
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Not very important - I prefer to chart my own course
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								11. How detailed are you when working on projects?
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="conscientiousness_2">
+								<div
+									class="likert-option"
+									data-value="1">
+									Extremely - I pay attention to every detail
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Very - I'm thorough on important aspects
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Moderately - I balance details with efficiency
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Somewhat - I focus more on the big picture
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Minimally - I often overlook details for speed
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								12. When waiting for others to complete their part of a project:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="patience_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									I'm very patient and understanding of delays
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									I'm generally patient but will check in periodically
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									I get anxious but try not to show it
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									I tend to frequently follow up to ensure progress
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									I become frustrated and may take over the task
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Assertiveness & Competitiveness Section -->
+				<section
+					class="bg-white rounded-xl shadow-md p-8 form-section animation-delay-6">
+					<h2 class="text-2xl font-bold text-purple-600 mb-6 flex items-center">
+						<i class="fas fa-bolt mr-3"></i>Assertiveness &amp; Competitiveness
+					</h2>
+
+					<div class="space-y-8">
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								13. In group discussions, I typically:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="assertiveness_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									Take charge and lead the conversation
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Share my opinions confidently
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Contribute when I have something valuable to add
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Prefer to listen and speak only when necessary
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Mostly observe and speak rarely
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								14. When I disagree with someone's opinion:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="assertiveness_2">
+								<div
+									class="likert-option"
+									data-value="1">
+									I immediately express my disagreement directly
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									I tactfully voice my different perspective
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									I ask questions to understand their view better
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									I may express disagreement privately later
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									I typically keep my disagreement to myself
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								15. How important is it for you to win or be the best?
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="competitiveness_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									Extremely - winning drives me in almost everything
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Very - I have a strong desire to excel and win
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Moderately - I enjoy winning but it's not everything
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Somewhat - I care more about personal improvement
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Not very - cooperation matters more than competition
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Extroversion & Cooperativeness Section -->
+				<section
+					class="bg-white rounded-xl shadow-md p-8 form-section animation-delay-7">
+					<h2 class="text-2xl font-bold text-purple-600 mb-6 flex items-center">
+						<i class="fas fa-users mr-3"></i>Extroversion &amp; Cooperativeness
+					</h2>
+
+					<div class="space-y-8">
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								16. After a day of social interaction at work, I typically feel:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="extroversion_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									Energized and ready for more social activities
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Satisfied and fulfilled
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Neither drained nor energized
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Somewhat tired and ready for quiet time
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Completely drained and needing solitude
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								17. In collaborative projects, I tend to:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="cooperativeness_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									Prioritize group harmony above all else
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Balance team needs with project goals
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Focus on contributing my part effectively
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Work independently within the group structure
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Prefer to handle my portion with minimal interaction
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								18. When there's a conflict within a team:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="cooperativeness_2">
+								<div
+									class="likert-option"
+									data-value="1">
+									I actively mediate to restore harmony
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									I try to find compromise that satisfies everyone
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									I focus on practical solutions to the issue
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									I state my position and stick to it
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									I distance myself from the conflict
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Temperament & Interaction Style Section -->
+				<section
+					class="bg-white rounded-xl shadow-md p-8 form-section animation-delay-8">
+					<h2 class="text-2xl font-bold text-purple-600 mb-6 flex items-center">
+						<i class="fas fa-balance-scale mr-3"></i>Temperament &amp;
+						Interaction Style
+					</h2>
+
+					<div class="space-y-8">
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								19. When unexpected changes occur at work, I typically:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="temperament_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									Adapt quickly and see it as an opportunity
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Take a moment to adjust, then proceed positively
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Need time to process before adapting
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Feel uncomfortable and prefer stability
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Strongly resist changes to established routines
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								20. When communicating with others, I prefer:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="interaction_1">
+								<div
+									class="likert-option"
+									data-value="1">
+									Direct, straightforward conversations
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Friendly, personable exchanges
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Factual, logical discussions
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Diplomatic, harmonious interactions
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Brief, efficient communications
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								21. In stressful workplace situations, I typically:
+							</h3>
+							<div
+								class="likert-scale"
+								data-question="temperament_2">
+								<div
+									class="likert-option"
+									data-value="1">
+									Remain calm and focused under pressure
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Experience some stress but manage it well
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Feel the pressure but push through it
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Become noticeably anxious or worried
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Feel overwhelmed and struggle to cope
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Additional Questions Section -->
+				<section
+					class="bg-white rounded-xl shadow-md p-8 form-section animation-delay-9">
+					<h2 class="text-2xl font-bold text-purple-600 mb-6 flex items-center">
+						<i class="fas fa-star mr-3"></i>Workplace Preferences
+					</h2>
+
+					<div class="space-y-8">
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								22. How comfortable are you with:
+							</h3>
+							<p class="mb-3 text-gray-600">Having to work alone</p>
+							<div
+								class="likert-scale"
+								data-question="comfort_alone">
+								<div
+									class="likert-option"
+									data-value="1">
+									Not at all comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Slightly comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Somewhat comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Very comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Extremely comfortable
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								23. How comfortable are you with:
+							</h3>
+							<p class="mb-3 text-gray-600">Open discussions in meetings</p>
+							<div
+								class="likert-scale"
+								data-question="comfort_discussions">
+								<div
+									class="likert-option"
+									data-value="1">
+									Not at all comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Slightly comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Somewhat comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Very comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Extremely comfortable
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								24. How comfortable are you with:
+							</h3>
+							<p class="mb-3 text-gray-600">
+								Changes in workplace expectations or job duties
+							</p>
+							<div
+								class="likert-scale"
+								data-question="comfort_changes">
+								<div
+									class="likert-option"
+									data-value="1">
+									Not at all comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Slightly comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Somewhat comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Very comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Extremely comfortable
+								</div>
+							</div>
+						</div>
+
+						<div class="question-card bg-gray-50 p-6 rounded-lg">
+							<h3 class="text-lg font-medium mb-4">
+								25. How comfortable are you with:
+							</h3>
+							<p class="mb-3 text-gray-600">
+								Taking the lead in group settings
+							</p>
+							<div
+								class="likert-scale"
+								data-question="comfort_leading">
+								<div
+									class="likert-option"
+									data-value="1">
+									Not at all comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="2">
+									Slightly comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="3">
+									Somewhat comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="4">
+									Very comfortable
+								</div>
+								<div
+									class="likert-option"
+									data-value="5">
+									Extremely comfortable
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Submit Section -->
+				<section
+					class="bg-white rounded-xl shadow-md p-8 form-section text-center animation-delay-10">
+					<h2 class="text-2xl font-bold text-purple-600 mb-6">
+						Ready to Discover Your Authentic Self?
+					</h2>
+					<p class="mb-8">
+						Thank you for completing the BE YOU Institute Personality
+						Assessment. Your responses will be used to create a personalized
+						profile that highlights your unique workplace traits and tendencies.
+					</p>
+
+					<div class="mb-6">
+						<label class="inline-flex items-center">
+							<input
+								type="checkbox"
+								id="consentCheckbox"
+								class="form-checkbox h-5 w-5 text-purple-600" >
+							<span class="ml-2 text-gray-700"
+								>I consent to BE YOU Institute processing my responses to create
+								my personality profile.</span
+							>
+						</label>
+					</div>
+
+					<button
+						type="submit"
+						id="submitAssessment"
+						class="animated-gradient-btn text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+						disabled>
+						Submit My Assessment
+					</button>
+
+					<p class="mt-6 text-sm text-gray-500">
+						Your privacy is important to us. Your information will be used
+						solely for the purpose of this assessment and will not be shared
+						with third parties.
+					</p>
+				</section>
+			</form>
+
+			<footer class="text-center mt-12 mb-4 text-gray-600">
+				<p>
+					BE YOU Institute © 2025 • Transformative Learning for Inspired Growth
+				</p>
+				<p class="mt-2 text-purple-600">#beamazing #beincredible #BEYOU</p>
+			</footer>
+		</div>
+    <script src="script.js"></script>
+	</body>
+</html>
