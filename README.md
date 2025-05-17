@@ -60,8 +60,8 @@ When seeking help, provide:
 1. Go to [Google Sheets](https://sheets.google.com) and create a new spreadsheet.
 2. In the first row, add the following column headers (adjust as needed for your questions):
 
-    | Timestamp | Name | Email | work_habits_1 | work_habits_2 | ... |
-    | --------- | ---- | ----- | ------------- | ------------- | --- |
+   | Timestamp | Name | Email | work_habits_1 | work_habits_2 | ... |
+   | --------- | ---- | ----- | ------------- | ------------- | --- |
 
    - `work_habits_1`, `work_habits_2`, etc. should match the `data-question` attributes in your HTML.
 
@@ -72,48 +72,51 @@ When seeking help, provide:
 1. In your Google Sheet, go to **Extensions > Apps Script**.
 2. Delete any code in `Code.gs` and paste the following:
 
-    ```javascript
-    function doPost(e) {
-      var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('beyouprofileinsights'); // Change 'Sheet1' if needed
-      var data = JSON.parse(e.postData.contents);
+   ```javascript
+   function doPost(e) {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(
+     "beyouprofileinsights"
+    ); // Change 'Sheet1' if needed
+    var data = JSON.parse(e.postData.contents);
 
-      // Prepare the row: Timestamp, Name, Email, then each question in order
-      var row = [
-        new Date(),
-        data.name || "",
-        data.email || "",
-        data.work_habits_1 || "",
-        data.work_habits_2 || "",
-        data.work_habits_3 || "",
-        data.achievement_1 || "",
-        data.achievement_2 || "",
-        data.openness_1 || "",
-        data.self_confidence_1 || "",
-        data.self_confidence_2 || "",
-        data.conscientiousness_1 || "",
-        data.conscientiousness_2 || "",
-        data.patience_1 || "",
-        data.assertiveness_1 || "",
-        data.assertiveness_2 || "",
-        data.competitiveness_1 || "",
-        data.extroversion_1 || "",
-        data.cooperativeness_1 || "",
-        data.cooperativeness_2 || "",
-        data.temperament_1 || "",
-        data.interaction_1 || "",
-        data.temperament_2 || "",
-        data.comfort_alone || "",
-        data.comfort_discussions || "",
-        data.comfort_changes || "",
-        data.comfort_leading || ""
-      ];
+    // Prepare the row: Timestamp, Name, Email, then each question in order
+    var row = [
+     new Date(),
+     data.name || "",
+     data.email || "",
+     data.work_habits_1 || "",
+     data.work_habits_2 || "",
+     data.work_habits_3 || "",
+     data.achievement_1 || "",
+     data.achievement_2 || "",
+     data.openness_1 || "",
+     data.self_confidence_1 || "",
+     data.self_confidence_2 || "",
+     data.conscientiousness_1 || "",
+     data.conscientiousness_2 || "",
+     data.patience_1 || "",
+     data.assertiveness_1 || "",
+     data.assertiveness_2 || "",
+     data.competitiveness_1 || "",
+     data.extroversion_1 || "",
+     data.cooperativeness_1 || "",
+     data.cooperativeness_2 || "",
+     data.temperament_1 || "",
+     data.interaction_1 || "",
+     data.temperament_2 || "",
+     data.comfort_alone || "",
+     data.comfort_discussions || "",
+     data.comfort_changes || "",
+     data.comfort_leading || "",
+    ];
 
-      sheet.appendRow(row);
+    sheet.appendRow(row);
 
-      return ContentService.createTextOutput(JSON.stringify({result: "success"}))
-        .setMimeType(ContentService.MimeType.JSON);
-    }
-    ```
+    return ContentService.createTextOutput(
+     JSON.stringify({ result: "success" })
+    ).setMimeType(ContentService.MimeType.JSON);
+   }
+   ```
 
 3. Save the script.
 
@@ -135,21 +138,44 @@ When seeking help, provide:
 1. Open your `script.js` file.
 2. **On line 132** (or wherever the fetch URL is set), replace the placeholder URL with your Web App URL:
 
-    ```javascript
-    // script.js, line 132 (example)
-    const response = await fetch(
-        "YOUR_APPS_SCRIPT_WEB_APP_URL", // <-- Replace this with your actual URL
-        {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                name: userName,
-                email: userEmail,
-                ...responses
-            }),
-        }
-    );
-    ```
+   ```javascript
+   // script.js, line 132 (example)
+   const response = await fetch(
+    "YOUR_APPS_SCRIPT_WEB_APP_URL", // <-- Replace this with your actual URL
+    {
+     method: "POST",
+     headers: { "Content-Type": "application/json" },
+     body: JSON.stringify({
+      name: userName,
+      email: userEmail,
+      work_habits_1: responses.work_habits_1 || "",
+      work_habits_2: responses.work_habits_2 || "",
+      work_habits_3: responses.work_habits_3 || "",
+      achievement_1: responses.achievement_1 || "",
+      achievement_2: responses.achievement_2 || "",
+      openness_1: responses.openness_1 || "",
+      self_confidence_1: responses.self_confidence_1 || "",
+      self_confidence_2: responses.self_confidence_2 || "",
+      conscientiousness_1: responses.conscientiousness_1 || "",
+      conscientiousness_2: responses.conscientiousness_2 || "",
+      patience_1: responses.patience_1 || "",
+      assertiveness_1: responses.assertiveness_1 || "",
+      assertiveness_2: responses.assertiveness_2 || "",
+      competitiveness_1: responses.competitiveness_1 || "",
+      extroversion_1: responses.extroversion_1 || "",
+      cooperativeness_1: responses.cooperativeness_1 || "",
+      cooperativeness_2: responses.cooperativeness_2 || "",
+      temperament_1: responses.temperament_1 || "",
+      interaction_1: responses.interaction_1 || "",
+      temperament_2: responses.temperament_2 || "",
+      comfort_alone: responses.comfort_alone || "",
+      comfort_discussions: responses.comfort_discussions || "",
+      comfort_changes: responses.comfort_changes || "",
+      comfort_leading: responses.comfort_leading || "",
+     }),
+    }
+   );
+   ```
 
 3. Save your changes.
 
