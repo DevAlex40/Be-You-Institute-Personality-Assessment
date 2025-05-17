@@ -102,7 +102,7 @@ When seeking help, provide:
         data.temperament_1 || "",
         data.interaction_1 || "",
         data.temperament_2 || "",
-        data.confort_alone || "",
+        data.comfort_alone || "",
         data.comfort_discussions || "",
         data.comfort_changes || "",
         data.comfort_leading || ""
