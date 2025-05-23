@@ -126,40 +126,40 @@ document.addEventListener("DOMContentLoaded", function () {
 			// POST to Google Apps Script Web App
             try {
                 const response = await fetch(
-                    "YOUR_APPS_SCRIPT_WEB_APP_URL", // <-- Replace this with your actual Web App URL
-                    {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-						body: JSON.stringify({
-							name: userName,
-							email: userEmail,
-							work_habits_1: responses.work_habits_1 || "",
-							work_habits_2: responses.work_habits_2 || "",
-							work_habits_3: responses.work_habits_3 || "",
-							achievement_1: responses.achievement_1 || "",
-							achievement_2: responses.achievement_2 || "",
-							openness_1: responses.openness_1 || "",
-							self_confidence_1: responses.self_confidence_1 || "",
-							self_confidence_2: responses.self_confidence_2 || "",
-							conscientiousness_1: responses.conscientiousness_1 || "",
-							conscientiousness_2: responses.conscientiousness_2 || "",
-							patience_1: responses.patience_1 || "",
-							assertiveness_1: responses.assertiveness_1 || "",
-							assertiveness_2: responses.assertiveness_2 || "",
-							competitiveness_1: responses.competitiveness_1 || "",
-							extroversion_1: responses.extroversion_1 || "",
-							cooperativeness_1: responses.cooperativeness_1 || "",
-							cooperativeness_2: responses.cooperativeness_2 || "",
-							temperament_1: responses.temperament_1 || "",
-							interaction_1: responses.interaction_1 || "",
-							temperament_2: responses.temperament_2 || "",
-							comfort_alone: responses.comfort_alone || "",
-							comfort_discussions: responses.comfort_discussions || "",
-							comfort_changes: responses.comfort_changes || "",
-							comfort_leading: responses.comfort_leading || ""
-						}),
-                    }
-                );
+									"https://script.google.com/macros/s/AKfycbw4d47eokx2hZYPR1x6QZ4PVCxsEE0y1aJ5qe3dUuMyfrXqN34akUVUWl-smwYxh5wm/exec", // <-- Replace this with your actual Web App URL
+									{
+										method: "POST",
+										headers: { "Content-Type": "application/json" },
+										body: JSON.stringify({
+											name: userName,
+											email: userEmail,
+											work_habits_1: responses.work_habits_1 || "",
+											work_habits_2: responses.work_habits_2 || "",
+											work_habits_3: responses.work_habits_3 || "",
+											achievement_1: responses.achievement_1 || "",
+											achievement_2: responses.achievement_2 || "",
+											openness_1: responses.openness_1 || "",
+											self_confidence_1: responses.self_confidence_1 || "",
+											self_confidence_2: responses.self_confidence_2 || "",
+											conscientiousness_1: responses.conscientiousness_1 || "",
+											conscientiousness_2: responses.conscientiousness_2 || "",
+											patience_1: responses.patience_1 || "",
+											assertiveness_1: responses.assertiveness_1 || "",
+											assertiveness_2: responses.assertiveness_2 || "",
+											competitiveness_1: responses.competitiveness_1 || "",
+											extroversion_1: responses.extroversion_1 || "",
+											cooperativeness_1: responses.cooperativeness_1 || "",
+											cooperativeness_2: responses.cooperativeness_2 || "",
+											temperament_1: responses.temperament_1 || "",
+											interaction_1: responses.interaction_1 || "",
+											temperament_2: responses.temperament_2 || "",
+											comfort_alone: responses.comfort_alone || "",
+											comfort_discussions: responses.comfort_discussions || "",
+											comfort_changes: responses.comfort_changes || "",
+											comfort_leading: responses.comfort_leading || "",
+										}),
+									}
+								);
                 const result = await response.json();
                 if (result.result === "success") {
                     alert(
